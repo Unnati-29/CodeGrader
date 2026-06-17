@@ -1,0 +1,32 @@
+from django.shortcuts import render, get_object_or_404, redirect
+from urllib3 import request
+from urllib3 import request
+from .models import Assignment
+from .forms import AssignmentForm
+
+# Create your views here.
+def assignment_list(request):
+    assignments = Assignment.objects.all()
+    return render(request, 'assignments/list.html', {'assignments': assignments})
+
+def assignment_detail(request, pk):
+    assignment = get_object_or_404(Assignment, pk=pk)
+    return render(request, 'assignments/detail.html', {'assignment': assignment})
+
+def assignment_create(request):
+    if request.method == "POST":
+        form = AssignmentForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect(
+                "assignment_list"
+            )        
+    else:
+        form = AssignmentForm()
+    return render(
+        request,
+        "assignments/create.html",
+        {
+            "form": form
+        }
+    )
