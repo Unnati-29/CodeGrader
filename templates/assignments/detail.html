@@ -1,20 +1,28 @@
 {% extends 'base.html' %}
 
+{%block title %}
+    {{ assignment.title }}
+{%endblock%}
+
 {% block content %}
+<div class="max-w-4xl mx-auto mt-10>
 
-<h1>{{ assignment.title }}</h1>
+    <h1 class="text-5xl font-bold mb-6">
+        {{ assignment.title }}
+    </h1>
 
-<p>
-    {{ assignment.description }}
-</p>
+    <p class="text-xl mb-6">
+        {{ assignment.description }}
+    </p>
 
-<p>
-    Marks: {{ assignment.marks }}
-</p>
-
-<p>
-    Deadline:
-    {{ assignment.deadline }}
-</p>
-
+    <div class="border rounded-xl p-6 mt-6">
+        <p>Marks: {{ assignment.marks }}</p>
+        <p>Deadline: {{ assignment.deadline }}</p>
+    </div>
+    <div class = "mt-6">
+    <button class="btn btn-primary">
+        Submit Solution
+    </button>
+    </div>
+</div>
 {% endblock %}
