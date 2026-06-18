@@ -6,7 +6,7 @@ from assignments.models import Assignment
 class Submissions(models.Model):
     student_name = models.CharField( max_length=50)
     code = models.TextField()
-    Assignment = models.ForeignKey(Assignment, on_delete=models.CASCADE)
+    assignment = models.ForeignKey(Assignment,on_delete=models.CASCADE)
     score = models.FloatField(default=0.0)
     feedback = models.TextField(blank=True)
     submitted_at = models.DateTimeField(default=timezone.now)

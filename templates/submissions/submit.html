@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="max-w-4xl mx-auto">
+
+    <h1 class="text-4xl font-bold mb-8">
+        Submit Solution
+    </h1>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button
+            type="submit"
+            class="btn btn-primary mt-4">
+
+            Submit
+
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

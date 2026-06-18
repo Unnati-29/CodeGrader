@@ -5,24 +5,44 @@
 {%endblock%}
 
 {% block content %}
-<div class="max-w-4xl mx-auto mt-10>
+<div class="max-w-5xl mx-auto mt-10">
 
-    <h1 class="text-5xl font-bold mb-6">
-        {{ assignment.title }}
-    </h1>
+    <div class="bg-slate-800 border border-slate-700 rounded-xl p-8">
 
-    <p class="text-xl mb-6">
-        {{ assignment.description }}
-    </p>
+        <h2 class="text-4xl font-bold mb-4">
+            {{ assignment.title }}
+        </h2>
 
-    <div class="border rounded-xl p-6 mt-6">
-        <p>Marks: {{ assignment.marks }}</p>
-        <p>Deadline: {{ assignment.deadline }}</p>
+        <p class="text-slate-300 text-lg mb-8">
+            {{ assignment.description }}
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-8">
+
+            <div class="bg-slate-900 p-4 rounded-lg">
+                <p class="text-slate-400">Marks</p>
+                <p class="text-2xl font-bold">
+                    {{ assignment.marks }}
+                </p>
+            </div>
+
+            <div class="bg-slate-900 p-4 rounded-lg">
+                <p class="text-slate-400">Deadline</p>
+                <p class="text-2xl font-bold">
+                    {{ assignment.deadline|date:"M d, Y" }}
+                </p>
+            </div>
+
+        </div>
+
+        <a
+            href="{% url 'submit' assignment.id %}"
+            class="inline-block bg-indigo-600 hover:bg-indigo-700 px-6 py-3 rounded-lg font-semibold transition"
+        >
+            Submit Solution
+        </a>
+
     </div>
-    <div class = "mt-6">
-    <button class="btn btn-primary">
-        Submit Solution
-    </button>
-    </div>
+
 </div>
 {% endblock %}

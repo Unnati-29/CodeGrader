@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 class="text-4xl font-bold mb-8">
+    Submission History
+</h1>
+
+<div class="bg-slate-800 rounded-xl overflow-hidden">
+
+    <table class="w-full">
+
+        <thead class="bg-slate-700">
+            <tr>
+                <th class="p-4 text-left">Student</th>
+                <th class="p-4 text-left">Assignment</th>
+                <th class="p-4 text-left">Score</th>
+                <th class="p-4 text-left">Submitted</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            {% for submission in submissions %}
+
+            <tr class="border-t border-slate-600">
+
+                <td class="p-4">
+                    {{ submission.student_name }}
+                </td>
+
+                <td class="p-4">
+                    {{ submission.assignment.title }}
+                </td>
+
+                <td class="p-4">
+                    {{ submission.score }}
+                </td>
+
+                <td class="p-4">
+                    {{ submission.submitted_at }}
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+{% endblock %}
