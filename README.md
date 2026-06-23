@@ -17,25 +17,43 @@ CodeGrader is an assignment management and automated grading platform built usin
   * Create and manage test cases
   * Link test cases to assignments
 
-* Teacher Interface
+* Student Submissions
 
-  * Assignment creation through web forms
-  * Assignment browsing dashboard
+  * Submit Python solutions
+  * Store submission history
+
+* Automated Evaluation
+
+  * Execute Python code
+  * Run against test cases
+  * Compare outputs
+  * Generate score automatically
+
+* Result Dashboard
+  
+  * Pass/Fail status per testcase
+  * Expected vs Actual output
+  * Score calculation
+
+* Submission History
+
+  * View all previous submissions
+  * Accepted/Failed status
 
 * Modern UI
 
-  * Built with Tailwind CSS
-  * Responsive and clean design
+  * Tailwind CSS
+  * Dark theme
+  * Responsive layout
 
 ## Upcoming Features
 
-* Student code submission portal
-* Automatic code evaluation
-* Instant scoring and feedback
-* Leaderboard and rankings
-* Role-based authentication
-* REST API integration
-* Submission history tracking
+* Leaderboard
+* Authentication & Authorization
+* Student Dashboard
+* REST API
+* Multi-language support (Python, C++, Java)
+* Deployment
 
 ## Tech Stack
 
@@ -89,16 +107,19 @@ http://127.0.0.1:8000
 
 🚧 Under Development
 
+🚀 MVP Completed
+
 Completed:
+* Assignment Management
+* Test Case Management
+* Student Submissions
+* Automated Evaluation Engine
+* Result Dashboard
+* Submission History
+* Tailwind UI
 
-* Django project setup
-* Assignment module
-* Test case module
-* Tailwind CSS integration
-* Assignment dashboard
-
-In Progress:
-
-* Submission module
-* Automated grading engine
-* Teacher dashboard enhancements
+Currently Building:
+* Leaderboard
+* Authentication
+* Student Dashboard
+* Deployment
