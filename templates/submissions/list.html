@@ -14,6 +14,7 @@
             <tr>
                 <th class="p-4 text-left">Student</th>
                 <th class="p-4 text-left">Assignment</th>
+                <th class="p-4 text-left">Status</th>
                 <th class="p-4 text-left">Score</th>
                 <th class="p-4 text-left">Submitted</th>
             </tr>
@@ -31,6 +32,18 @@
 
                 <td class="p-4">
                     {{ submission.assignment.title }}
+                </td>
+
+                <td>
+                    {% if submission.score == 100 %}
+                        <span class="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm"">
+                            Accepted
+                        </span>
+                    {% else %}
+                        <span class="px-3 py-1 bg-red-500/20 text-red-400 rounded-full text-sm">
+                             Failed
+                        </span>
+                    {% endif %}
                 </td>
 
                 <td class="p-4">
