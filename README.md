@@ -55,6 +55,20 @@ CodeGrader is an assignment management and automated grading platform built usin
 * Multi-language support (Python, C++, Java)
 * Deployment
 
+## Screenshots
+
+### Assignment Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+### Submission Result
+
+![Result](screenshots/result.png)
+
+### Submission History
+
+![History](screenshots/history.png)
+
 ## Tech Stack
 
 * Python
