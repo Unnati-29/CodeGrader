@@ -1,10 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from urllib3 import request
-from urllib3 import request
 from .models import Assignment
 from .forms import AssignmentForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+@login_required
 def assignment_list(request):
     assignments = Assignment.objects.all()
     return render(request, 'assignments/list.html', {'assignments': assignments})

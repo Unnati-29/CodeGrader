@@ -3,6 +3,7 @@ from .forms import SubmissionForm
 from assignments.models import Assignment
 from .models import Submissions
 from .evaluator import evaluator_submission
+from django.db.models import Sum
 
 # Create your views here.
 
@@ -47,3 +48,10 @@ def submission_result(request, submission_id):
     submission = Submissions.objects.get(id=submission_id)
 
     return render(request,'submissions/result.html',{'submission': submission})
+
+def leaderboard(request):
+
+    leaderboard_data = (Submissions.objects.values('student_name').annotate(total_score=Sum('score'))
+        .order_by('-total_score'))
+
+    return render(request,'submissions/leaderboard.html',{'leaderboard_data': leaderboard_data})
