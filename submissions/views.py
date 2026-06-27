@@ -3,7 +3,8 @@ from .forms import SubmissionForm
 from assignments.models import Assignment
 from .models import Submissions
 from .evaluator import evaluator_submission
-from django.db.models import Sum
+from django.db.models import Sum , Max
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -17,6 +18,7 @@ def submit(request, assignment_id):
 
         if form.is_valid():
             submission = form.save(commit=False)
+            submission.student = request.user
             submission.assignment = assignment
             score, feedback = evaluator_submission(submission.code,assignment)
 
@@ -51,7 +53,21 @@ def submission_result(request, submission_id):
 
 def leaderboard(request):
 
-    leaderboard_data = (Submissions.objects.values('student_name').annotate(total_score=Sum('score'))
-        .order_by('-total_score'))
+    leaderboard_data = (Submissions.objects.values("student__username").annotate(total_score=Sum("score")).order_by("-total_score"))
 
     return render(request,'submissions/leaderboard.html',{'leaderboard_data': leaderboard_data})
+
+@login_required
+def dashboard(request):
+    submissions = Submissions.objects.filter(student=request.user)
+
+    total_submissions = submissions.count()
+
+    best_score = submissions.aggregate(Max("score"))["score__max"] or 0
+
+    context = {
+        "total_submissions": total_submissions,
+        "best_score": best_score,
+        "submissions": submissions[:5],   # latest 5
+    }
+    return render(request, "submissions/dashboard.html", context)

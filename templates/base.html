@@ -9,12 +9,115 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     {% tailwind_css %}
 </head>
-<body>
-    
-        <h1 class = "text-4xl font-bold text-center text-amber-400 p-3">CodeGrader</h1>
+<body class="bg-slate-900 text-white">
 
-        {% block content %}
-        {% endblock %}
+<nav class="sticky top-0 z-50 bg-slate-800 shadow-md">
+    <div class="max-w-7xl mx-auto px-6 py-4 grid grid-cols-3 items-center">
+
+        <!-- Left -->
+        <div>
+            <a href="{% url 'assignment_list' %}"
+               class="text-3xl font-bold text-amber-400">
+                CodeGrader
+            </a>
+        </div>
+
+        <!-- Center -->
+        <div class="flex justify-center gap-8">
+
+            <a href="{% url 'assignment_list' %}"
+            class="{% if request.resolver_match.url_name == 'assignment_list' %}
+                        text-amber-400 font-semibold
+                    {% else %}
+                        text-white hover:text-amber-400 transition
+                    {% endif %}">
+                Assignments
+            </a>
+
+            <a href="{% url 'leaderboard' %}"
+            class="{% if request.resolver_match.url_name == 'leaderboard' %}
+                        text-amber-400 font-semibold
+                    {% else %}
+                        text-white hover:text-amber-400 transition
+                    {% endif %}">
+                Leaderboard
+            </a>
+
+            {% if user.is_authenticated %}
+
+                {% if user.profile.role == "student" %}
+
+                    <a href="{% url 'dashboard' %}"
+                    class="{% if request.resolver_match.url_name == 'dashboard' %}
+                                text-amber-400 font-semibold
+                            {% else %}
+                                text-white hover:text-amber-400 transition
+                            {% endif %}">
+                        Dashboard
+                    </a>
+
+                    <a href="{% url 'submission_list' %}"
+                    class="{% if request.resolver_match.url_name == 'submission_list' %}
+                                text-amber-400 font-semibold
+                            {% else %}
+                                text-white hover:text-amber-400 transition
+                            {% endif %}">
+                        My Submissions
+                    </a>
+
+                {% else %}
+
+                    <a href="{% url 'assignment_create' %}"
+                    class="{% if request.resolver_match.url_name == 'assignment_create' %}
+                                text-amber-400 font-semibold
+                            {% else %}
+                                text-white hover:text-amber-400 transition
+                            {% endif %}">
+                        Create Assignment
+                    </a>
+
+                {% endif %}
+
+            {% endif %}
+
+        </div>
+
+        <!-- Right -->
+        <div class="flex justify-end items-center gap-4">
+
+            {% if user.is_authenticated %}
+
+                <span class="text-gray-300">
+                    Welcome, {{ user.username }}
+                </span>
+
+                <a href="{% url 'logout' %}" class="btn btn-error btn-sm">
+                    Logout
+                </a>
+
+            {% else %}
+
+                <a href="{% url 'login' %}" class="btn btn-primary btn-sm">
+                    Login
+                </a>
+
+                <a href="{% url 'register' %}" class="btn btn-secondary btn-sm">
+                    Register
+                </a>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+</nav>
+
+<div class="max-w-7xl mx-auto px-6 py-8">
+
+    {% block content %}
+    {% endblock %}
+
+</div>
 
 </body>
 </html>

@@ -1,1 +1,19 @@
 node_modules
+# Virtual Environment
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# SQLite
+db.sqlite3
+
+# VS Code
+.vscode/
+
+# Static build files (optional)
+staticfiles/
+
+# Environment variables
+.env

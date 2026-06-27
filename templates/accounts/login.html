@@ -1,19 +1,72 @@
-<form method="POST">
-    {% csrf_token %}
+{% extends "base.html" %}
 
-    <input
-        type="text"
-        name="username"
-        placeholder="Username"
-    >
+{% block title %}Login{% endblock %}
 
-    <input
-        type="password"
-        name="password"
-        placeholder="Password"
-    >
+{% block content %}
 
-    <button type="submit">
-        Login
-    </button>
-</form>
+<div class="flex justify-center items-center min-h-[80vh]">
+
+    <div class="w-full max-w-md bg-slate-800 p-8 rounded-xl shadow-lg">
+
+        <h1 class="text-3xl font-bold text-center text-amber-400">
+            Welcome Back 👋
+        </h1>
+
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-error my-4">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        <p class="text-center text-gray-400 mt-2 mb-6">
+            Login to continue to CodeGrader
+        </p>
+
+        <form method="POST">
+
+            {% csrf_token %}
+
+            <div class="mb-4">
+                <label class="block mb-2">Username</label>
+                <input
+                    type="text"
+                    name="username"
+                    class="input input-bordered w-full"
+                    placeholder="Enter username"
+                >
+            </div>
+
+            <div class="mb-6">
+                <label class="block mb-2">Password</label>
+                <input
+                    type="password"
+                    name="password"
+                    class="input input-bordered w-full"
+                    placeholder="Enter password"
+                >
+            </div>
+
+            <button
+                class="btn btn-warning w-full">
+                Login
+            </button>
+
+        </form>
+
+        <p class="text-center mt-6 text-gray-400">
+            Don't have an account?
+
+            <a href="{% url 'register' %}"
+               class="text-amber-400 hover:underline">
+                Register
+            </a>
+
+        </p>
+
+    </div>
+
+</div>
+
+{% endblock %}

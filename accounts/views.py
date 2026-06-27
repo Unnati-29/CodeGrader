@@ -1,27 +1,29 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
+from .forms import RegisterForm
+from django.contrib import messages
 
 
 def register(request):
 
     if request.method == "POST":
+        form = RegisterForm(request.POST)
 
-        username = request.POST["username"]
-        password = request.POST["password"]
+        if form.is_valid():
+            user = form.save(commit=False)
+            user.set_password(form.cleaned_data["password"])
+            user.save()
 
-        user = User.objects.create_user(
-            username=username,
-            password=password
-        )
+            return redirect("login")
 
-        login(request, user)
-
-        return redirect('/')
+    else:
+        form = RegisterForm()
 
     return render(
         request,
-        'accounts/register.html'
+        "accounts/register.html",
+        {"form": form},
     )
 
 def user_login(request):
@@ -35,9 +37,16 @@ def user_login(request):
             password=password
         )
 
-        if user:
+        if user is not None:
+
             login(request, user)
-            return redirect("assignment_list")
+
+            if user.profile.role == "teacher":
+                return redirect("assignment_list")
+
+            return redirect("dashboard")
+
+        messages.error(request, "Invalid username or password.")
 
     return render(request, "accounts/login.html")
 

@@ -1,10 +1,11 @@
 from django.db import models
 from django.utils import timezone
 from assignments.models import Assignment
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Submissions(models.Model):
-    student_name = models.CharField( max_length=50)
+    student = models.ForeignKey(User,on_delete=models.CASCADE,related_name="submissions")
     code = models.TextField()
     assignment = models.ForeignKey(Assignment,on_delete=models.CASCADE)
     score = models.FloatField(default=0.0)
@@ -12,4 +13,4 @@ class Submissions(models.Model):
     submitted_at = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return self.student_name
+        return self.student.username
