@@ -123,17 +123,17 @@ http://127.0.0.1:8000
 
 🚀 MVP Completed
 
-Completed:
-* Assignment Management
-* Test Case Management
-* Student Submissions
-* Automated Evaluation Engine
-* Result Dashboard
-* Submission History
-* Tailwind UI
+### Completed
+- Assignment Management
+- Test Case Management
+- Student Code Submission
+- Automated Code Evaluation
+- Instant Feedback & Scoring
+- Submission History
+- Leaderboard
+- User Authentication (Register/Login/Logout)
 
-Currently Building:
-* Leaderboard
-* Authentication
-* Student Dashboard
-* Deployment
+### In Progress
+- Role-Based Access Control
+- Home Page & Navigation Improvements
+- Deployment
