@@ -4,56 +4,47 @@ CodeGrader is an assignment management and automated grading platform built usin
 
 ## Features
 
-### Implemented
+### Authentication
+- User Registration & Login
+- Role-Based Authentication (Teacher / Student)
+- Secure Logout
 
-* Assignment Management
+### Assignment Management
+- Create Assignments (Teacher Only)
+- View Assignment List
+- Assignment Details
 
-  * Create assignments
-  * View assignment list
-  * View assignment details
+### Code Submission
+- Submit Python Solutions
+- Automatic Code Evaluation
+- Instant Score & Feedback
 
-* Test Case Management
+### Dashboard
+- Student Dashboard
+- Best Score
+- Total Submissions
+- Recent Submission History
 
-  * Create and manage test cases
-  * Link test cases to assignments
+### Leaderboard
+- Score-based Ranking
+- User-wise Total Scores
 
-* Student Submissions
-
-  * Submit Python solutions
-  * Store submission history
-
-* Automated Evaluation
-
-  * Execute Python code
-  * Run against test cases
-  * Compare outputs
-  * Generate score automatically
-
-* Result Dashboard
-  
-  * Pass/Fail status per testcase
-  * Expected vs Actual output
-  * Score calculation
-
-* Submission History
-
-  * View all previous submissions
-  * Accepted/Failed status
-
-* Modern UI
-
-  * Tailwind CSS
-  * Dark theme
-  * Responsive layout
+### Modern UI
+- Responsive Tailwind CSS Interface
+- DaisyUI Components
 
 ## Upcoming Features
 
-* Leaderboard
-* Authentication & Authorization
-* Student Dashboard
-* REST API
-* Multi-language support (Python, C++, Java)
-* Deployment
+- Teacher Dashboard
+- Submission Status (Accepted/Wrong Answer)
+- Multiple Hidden Test Cases
+- Monaco Code Editor
+- Assignment Difficulty Levels
+- Assignment Deadlines
+- Search & Filter
+- Student Profiles
+- REST API
+- Docker-based Secure Code Execution
 
 ## Screenshots
 
