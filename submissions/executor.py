@@ -1,23 +1,28 @@
-import io
+# submissions/executor.py
+
+import subprocess
 import sys
 
-def execute_code(code,input_data):
-    old_stdin = sys.stdin
-    old_stdout = sys.stdout
+TIMEOUT_SECONDS = 5
 
-    sys.stdin = io.StringIO(input_data)
-    sys.stdout = io.StringIO()
 
+def execute_code(code, input_data):
     try:
-        exec(code)
+        result = subprocess.run(
+            [sys.executable, "-c", code],   
+            input=input_data,
+            capture_output=True,
+            text=True,
+            timeout=TIMEOUT_SECONDS,
+        )
 
-        output = sys.stdout.getvalue().strip()
+        if result.returncode != 0:
+            return f"Error: {result.stderr.strip()}"
+
+        return result.stdout.strip()
+
+    except subprocess.TimeoutExpired:
+        return "Error: Code took too long to execute (possible infinite loop)"
 
     except Exception as e:
-        output = str(e)
-
-    finally:
-        sys.stdin = old_stdin
-        sys.stdout = old_stdout
-
-    return output
+        return f"Error: {str(e)}"

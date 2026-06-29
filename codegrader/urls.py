@@ -22,6 +22,9 @@ urlpatterns = [
     path('',include('assignments.urls')),
     path('',include('submissions.urls')),
     path('',include('accounts.urls')),
+    path('api/', include('accounts.api_urls')), 
+    path('api/', include('assignments.api_urls')),
+    path('api/', include('submissions.api_urls')),
 
     path("__reload__/", include("django_browser_reload.urls")),
 ]
