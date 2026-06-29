@@ -1,94 +1,193 @@
-# CodeGrader
+# CodeGrader 🚀
 
-CodeGrader is an assignment management and automated grading platform built using Django and Tailwind CSS. It enables instructors to create assignments and test cases, while providing a foundation for automated code evaluation and instant feedback.
+A full-stack Django-based online coding assignment platform where teachers can create programming assignments and students can submit solutions that are automatically evaluated against predefined test cases.
 
-## Features
+---
 
-### Authentication
-- User Registration & Login
-- Role-Based Authentication (Teacher / Student)
-- Secure Logout
+## ✨ Features
 
-### Assignment Management
-- Create Assignments (Teacher Only)
-- View Assignment List
-- Assignment Details
+### 👨‍🏫 Teacher
 
-### Code Submission
-- Submit Python Solutions
-- Automatic Code Evaluation
-- Instant Score & Feedback
+* Teacher login and authentication
+* Role-based authorization
+* Create coding assignments
+* Add multiple test cases
+* Set deadlines and marks
+* View all assignments
 
-### Dashboard
-- Student Dashboard
-- Best Score
-- Total Submissions
-- Recent Submission History
+### 👨‍🎓 Student
 
-### Leaderboard
-- Score-based Ranking
-- User-wise Total Scores
+* Student registration & login
+* View available assignments
+* Submit Python solutions
+* Automatic code execution
+* Instant grading
+* Detailed feedback for each test case
+* Dashboard with submission statistics
 
-### Modern UI
-- Responsive Tailwind CSS Interface
-- DaisyUI Components
+### 📊 Dashboard
 
-## Upcoming Features
+* Total submissions
+* Best score
+* Recent submissions
 
-- Teacher Dashboard
-- Submission Status (Accepted/Wrong Answer)
-- Multiple Hidden Test Cases
-- Monaco Code Editor
-- Assignment Difficulty Levels
-- Assignment Deadlines
-- Search & Filter
-- Student Profiles
-- REST API
-- Docker-based Secure Code Execution
+### 🏆 Leaderboard
+
+* Ranking based on highest scores
+* Live score updates
+
+### 🔐 Authentication
+
+* Django Authentication
+* Role-based access (Teacher / Student)
+* JWT Authentication for REST API
+* Session Authentication for Browsable API
+
+### 🌐 REST API
+
+Complete REST API built using Django REST Framework.
+
+Available endpoints:
+
+```
+/api/auth/register/
+/api/auth/login/
+/api/auth/profile/
+
+/api/assignments/
+/api/submissions/
+```
+
+Supports:
+
+* GET
+* POST
+* Retrieve
+* Authentication with JWT
+* Browsable API
+
+---
+
+## 🛠 Tech Stack
+
+* Python
+* Django
+* Django REST Framework
+* SQLite
+* Tailwind CSS
+* DaisyUI
+* JWT Authentication
+* HTML
+* CSS
+* JavaScript
+
+---
+
+## Project Structure
+
+```
+codegrader/
+│
+├── accounts/
+├── assignments/
+├── submissions/
+├── templates/
+├── theme/
+├── manage.py
+└── requirements.txt
+```
+
+---
+
+## Current Workflow
+
+### Teacher
+
+* Register/Login
+* Create Assignment
+* Add Test Cases
+* Students receive assignment
+
+### Student
+
+* Register/Login
+* View Assignments
+* Submit Python Code
+* Automatic Evaluation
+* Receive Score & Feedback
+* Leaderboard Updates
+
+---
+
+## API Testing
+
+The REST API has been tested using:
+
+* Django REST Framework Browsable API
+* JWT Authentication
+* Session Authentication
+
+Verified workflows:
+
+* User Registration
+* User Login
+* Assignment Creation
+* Assignment Listing
+* Code Submission
+* Automatic Grading
+* Dashboard API
+* Leaderboard API
+
+---
 
 ## Screenshots
 
 ### Assignment Dashboard
 
+
+
 ![Dashboard](screenshots/dashboard.png)
+
+
 
 ### Submission Result
 
+
+
 ![Result](screenshots/result.png)
+
+
 
 ### Submission History
 
+
+
 ![History](screenshots/history.png)
 
-## Tech Stack
+---
 
-* Python
-* Django
-* SQLite
-* Tailwind CSS
-* DaisyUI
+## Future Improvements
 
-## Project Structure
+* Docker Deployment
+* PostgreSQL
+* Redis + Celery
+* Asynchronous Code Execution
+* Code Execution Sandbox (Docker)
+* Multi-language Support (C++, Java, Python)
+* Plagiarism Detection
+* Email Notifications
+* Assignment Analytics
+* Submission Status (Pending / Running / Accepted / Wrong Answer)
+* Teacher Dashboard
+* Student Progress Tracking
 
-```text
-CodeGrader/
-│
-├── assignments/
-├── submissions/
-├── templates/
-├── static/
-├── theme/
-├── codegrader/
-│
-├── manage.py
-├── requirements.txt
-└── README.md
-```
+---
 
 ## Installation
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/Unnati-29/CodeGrader.git
+
 cd CodeGrader
 
 python -m venv venv
@@ -99,32 +198,53 @@ pip install -r requirements.txt
 
 python manage.py migrate
 
+python manage.py createsuperuser
+
 python manage.py runserver
 ```
 
 Open:
 
-```text
-http://127.0.0.1:8000
+```
+http://127.0.0.1:8000/
 ```
 
-## Current Status
+---
 
-🚧 Under Development
+## Project Status
 
-🚀 MVP Completed
+**Current Version:** v1.0
 
-### Completed
-- Assignment Management
-- Test Case Management
-- Student Code Submission
-- Automated Code Evaluation
-- Instant Feedback & Scoring
-- Submission History
-- Leaderboard
-- User Authentication (Register/Login/Logout)
+✔ Template-based Web Application
 
-### In Progress
-- Role-Based Access Control
-- Home Page & Navigation Improvements
-- Deployment
+✔ REST API (DRF)
+
+✔ JWT Authentication
+
+✔ Role-Based Access Control
+
+✔ Automatic Code Evaluation
+
+✔ Dashboard
+
+✔ Leaderboard
+
+✔ Assignment Management
+
+🚧 Upcoming
+
+* Deployment
+* Docker Sandbox
+* Multi-language Compiler
+* Advanced Analytics
+
+---
+
+## Author
+
+**Unnati Raj**
+
+Mechanical Engineering Undergraduate, NIT Silchar
+
+Aspiring Software Development Engineer | Django | DRF | DSA | Web Development
+
