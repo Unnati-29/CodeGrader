@@ -1,5 +1,4 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from urllib3 import request
 from .models import Assignment
 from .forms import AssignmentForm
 from django.contrib.auth.decorators import login_required

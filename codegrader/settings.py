@@ -57,10 +57,7 @@ INSTALLED_APPS = [
     'theme',
     'accounts'
 ]
-if DEBUG:
-    INSTALLED_APPS += [
-        "django_browser_reload",
-    ]
+
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -85,10 +82,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-if DEBUG:
-    MIDDLEWARE.append(
-        "django_browser_reload.middleware.BrowserReloadMiddleware"
-    )
+
 
 ROOT_URLCONF = 'codegrader.urls'
 
