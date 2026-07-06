@@ -1,0 +1,1 @@
+web: gunicorn codegrader.wsgi --log-file -
