@@ -7,6 +7,6 @@ from .api_views import (
 urlpatterns = [
     path('submissions/', SubmissionListCreateView.as_view(), name='submission-list'),
     path('submissions/<int:pk>/', SubmissionDetailView.as_view(), name='submission-detail'),
-    path('submissions/leaderboard/', LeaderboardView.as_view(), name='leaderboard'),
-    path('submissions/dashboard/', DashboardView.as_view(), name='dashboard'),
+    path('submissions/leaderboard/', LeaderboardView.as_view(), name='leaderboard-api'),
+    path('submissions/dashboard/', DashboardView.as_view(), name='dashboard-api'),
 ]
