@@ -13,7 +13,7 @@ Teachers create programming assignments with test cases. Students submit Python 
 [![JWT](https://img.shields.io/badge/Auth-JWT-000000?logo=jsonwebtokens&logoColor=white)](https://jwt.io/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-[Live Demo](#) · [Report Bug](../../issues) · [Request Feature](../../issues)
+[Live Demo](https://codegrader.up.railway.app/) · [Report Bug](../../issues) · [Request Feature](../../issues)
 
 </div>
 
@@ -93,7 +93,7 @@ A complete, browsable REST API built with Django REST Framework, supporting regi
 | Auth           | JWT (`djangorestframework-simplejwt`), Django Session Auth |
 | Frontend       | Django Templates, HTML, CSS, JavaScript       |
 | Styling        | Tailwind CSS, DaisyUI                          |
-| Deployment     | Deployed to production (see [Live Demo](#-live-demo)) |
+| Deployment     | Deployed to production (see [Live Demo](https://codegrader.up.railway.app/)) |
 
 ## 📸 Screenshots
 
