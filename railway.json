@@ -3,6 +3,6 @@
     "builder": "NIXPACKS"
   },
   "deploy": {
-    "startCommand": "python manage.py migrate && python manage.py createsu && python manage.py collectstatic --noinput && gunicorn codegrader.wsgi --log-file -"
+    "startCommand": "/opt/venv/bin/python manage.py migrate && /opt/venv/bin/python manage.py createsu && /opt/venv/bin/python manage.py collectstatic --noinput && gunicorn codegrader.wsgi --log-file -"
   }
 }
