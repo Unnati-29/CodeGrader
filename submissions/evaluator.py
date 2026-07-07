@@ -30,6 +30,9 @@ def evaluator_submission(code,assignment):
                 f"Output: {actual_output}\n\n"
             )
 
-    score = (passed / total) * 100
+    if total > 0:
+        score = (passed / total) * assignment.marks
+    else:
+        score = 0
 
     return score,feedback
