@@ -1,1 +1,1 @@
-web: gunicorn codegrader.wsgi --log-file -
+web: python manage.py migrate && python manage.py collectstatic --noinput && gunicorn codegrader.wsgi --log-file -
