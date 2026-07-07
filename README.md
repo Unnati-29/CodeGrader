@@ -260,10 +260,6 @@ Contributions are welcome! To contribute:
 
 Please open an issue first to discuss significant changes.
 
-## 📄 License
-
-This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
-
 ## 👩‍💻 Author
 
 **Unnati Raj**
