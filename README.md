@@ -99,7 +99,7 @@ A complete, browsable REST API built with Django REST Framework, supporting regi
 
 | Assignment Dashboard | Submission Result | Submission History |
 |:---:|:---:|:---:|
-| *(screenshots/dashboard.png)* | *(screenshots/result.png)* | *(screenshots/history.png)* |
+| *[Assignment Dashboard](screenshots/dashboard.png)* | *[Submission Result](screenshots/result.png)* | *[Submission History](screenshots/history.png)* |
 
 ## 📂 Project Structure
 
